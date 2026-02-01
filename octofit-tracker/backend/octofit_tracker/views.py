@@ -24,12 +24,18 @@ class LeaderboardViewSet(viewsets.ModelViewSet):
     queryset = Leaderboard.objects.all()
     serializer_class = LeaderboardSerializer
 
+import os
 @api_view(['GET'])
 def api_root(request, format=None):
+    codespace_name = os.environ.get('CODESPACE_NAME', '')
+    if codespace_name:
+        base_url = f'https://{codespace_name}-8000.app.github.dev/api/'
+    else:
+        base_url = '/api/'
     return Response({
-        'users': '/api/users/',
-        'teams': '/api/teams/',
-        'workouts': '/api/workouts/',
-        'activities': '/api/activities/',
-        'leaderboard': '/api/leaderboard/',
+        'users': f'{base_url}users/',
+        'teams': f'{base_url}teams/',
+        'workouts': f'{base_url}workouts/',
+        'activities': f'{base_url}activities/',
+        'leaderboard': f'{base_url}leaderboard/',
     })
