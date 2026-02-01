@@ -1,38 +1,101 @@
+
+body {
+  background: linear-gradient(135deg, #e0f7fa 0%, #f8bbd0 100%);
+  min-height: 100vh;
+}
+
 .App {
   text-align: center;
+  color: #2d4059;
+  background: transparent;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Navbar */
+.navbar {
+  background: linear-gradient(90deg, #4F8A8B 0%, #72C3DC 100%) !important;
+  box-shadow: 0 2px 8px rgba(79,138,139,0.08);
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navbar-brand, .navbar-nav .nav-link {
+  color: #fff !important;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar-brand {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.octofit-logo {
+  height: 36px;
+  width: 36px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+.navbar-nav .nav-link.active, .navbar-nav .nav-link:hover {
+  color: #ffd166 !important;
 }
 
-.App-link {
-  color: #61dafb;
+/* Headings */
+h1, h2, h3, .card-title {
+  color: #4F8A8B;
+  font-weight: 700;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Tables */
+.table-primary th {
+  background-color: #72C3DC !important;
+  color: #fff;
+}
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: #e0f7fa;
+}
+.table-striped > tbody > tr:nth-of-type(even) {
+  background-color: #f8bbd0;
+}
+.table-hover tbody tr:hover {
+  background-color: #ffd166 !important;
+}
+
+/* Buttons */
+.btn-primary {
+  background: linear-gradient(90deg, #4F8A8B 0%, #72C3DC 100%);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(79,138,139,0.08);
+}
+.btn-primary:hover, .btn-primary:focus {
+  background: #ffd166;
+  color: #2d4059;
+}
+
+/* Links */
+a, .App-link {
+  color: #4F8A8B;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+a:hover, .App-link:hover {
+  color: #ffd166;
+}
+
+/* Cards */
+.card {
+  border-radius: 1rem;
+  border: none;
+  box-shadow: 0 2px 16px rgba(79,138,139,0.10);
+}
+
+/* Modals */
+.modal-content {
+  border-radius: 1rem;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  background: #e0f7fa;
+}
+::-webkit-scrollbar-thumb {
+  background: #72C3DC;
+  border-radius: 4px;
 }
